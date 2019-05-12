@@ -5,6 +5,7 @@ val sparkSession = SparkSession.builder.master("master").appName("app").getOrCre
 val df = spark.createDataFrame(Seq(("a", 2, 1),("b", 1, 1),("c", 1, 1),("a", 2, 1),("b", 1, 1),("c", 1, 1),("a", 2, 1),("b", 1, 2),("c", 1, 2))) toDF("id", "channel", "type")
 分组求占比
 val result=df.withColumn("percent",format_number(col("type").divide( sum("type").over()).multiply(100),5));
+val row_number = """select sex,age,row_number() over(partition by sex order by age desc) as rowNumber from testtable having rowNumber <=3"""
 
 spark sql 排序：
 https://blog.csdn.net/kwame211/article/details/81325261
