@@ -9,7 +9,8 @@ val row_number = """select sex,age,row_number() over(partition by sex order by a
 
 spark sql 排序：
 https://blog.csdn.net/kwame211/article/details/81325261
-
+pivot
+https://blog.csdn.net/xuejianbest/article/details/85774880
 
 
 
